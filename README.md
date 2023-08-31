@@ -1,29 +1,6 @@
-# Chrome Extension TypeScript Starter
+# Chrome Extension for typing commands in input on page
 
-![build](https://github.com/chibat/chrome-extension-typescript-starter/workflows/build/badge.svg)
-
-Chrome Extension, TypeScript and Visual Studio Code
-
-## Prerequisites
-
-* [node + npm](https://nodejs.org/) (Current Version)
-
-## Option
-
-* [Visual Studio Code](https://code.visualstudio.com/)
-
-## Includes the following
-
-* TypeScript
-* Webpack
-* React
-* Jest
-* Example Code
-    * Chrome Storage
-    * Options Version 2
-    * content script
-    * count up badge number
-    * background
+Forked from [this repo](https://github.com/chibat/chrome-extension-typescript-starter)
 
 ## Project Structure
 
@@ -32,39 +9,81 @@ Chrome Extension, TypeScript and Visual Studio Code
 * dist: Chrome Extension directory
 * dist/js: Generated JavaScript files
 
-## Setup
+> It's important to remember to add new files that are supposed to be included to the webpack config file.
 
-```
-npm install
-```
+## npm Commands
 
-## Import as Visual Studio Code project
+### Build
 
-...
-
-## Build
-
-```
+```cmd
 npm run build
 ```
 
-## Build in watch mode
+### Build in watch mode
 
-### terminal
-
-```
+```cmd
 npm run watch
 ```
 
-### Visual Studio Code
+## Development
 
-Run watch mode.
+1. Go to `chrome://extensions/` and click `Load unpacked` and select `dist` directory.
 
-type `Ctrl + Shift + B`
+2. Run `npm run watch` and edit source files.
 
-## Load extension to chrome
+3. Reload the extension on `chrome://extensions/` if you change manifest.json or background script by pressing `Update` button on the extension card.
 
-Load `dist` directory
+4. Refresh the page where you test extension.
 
 ## Test
+
 `npx jest` or `npm run test`
+
+## TODO
+
+* [ ] Improve Autocomplete
+* [ ] Make commands async
+* [ ] Add option to import commands from elsewhere
+* [ ] Prepare library for commands
+* [ ] Add option to configure command trigger
+* [ ] Add option to configure keybinding
+* [ ] Prepare custom elements to be used internally
+* [ ] Add most common commands to library like math, date, etc.
+
+---
+
+### Custom Elements
+
+Custom elements will allow for easier customization of the extension because they could be provided with other data-attributes and styles.
+
+---
+
+### Async Commands
+
+Async commands will allow for more complex commands to be executed. For example, a command could be used to fetch data from an API and then display it in a popup.
+
+---
+
+### Import commands / Commands Library
+
+Commands will be able to be imported from other sources. This will most likely require putting the imported command file in designated folder from where extension will read them and add them to the list of all available commands.
+
+---
+
+### Common Commands
+
+Common commands like math and date should be supported out of the box.
+
+Example math command:
+
+```cmd
+//. math 2 + 2
+```
+
+or with shorthand:
+
+```cmd
+//. = 2 + 2
+```
+
+---

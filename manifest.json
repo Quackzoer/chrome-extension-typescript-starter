@@ -29,7 +29,10 @@
     "storage",
     "activeTab",
     "webNavigation",
-    "webRequest"
+    "webRequest",
+    "webRequestBlocking",
+    "http://*/*",
+    "https://*/*"
   ],
 
   "host_permissions": [

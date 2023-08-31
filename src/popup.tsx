@@ -5,7 +5,7 @@ const Popup = () => {
   const [count, setCount] = useState(0);
   const [currentURL, setCurrentURL] = useState<string>();
 
-  useEffect(() => {
+  useEffect(() => { 
     chrome.action.setBadgeText({ text: count.toString() });
   }, [count]);
 
